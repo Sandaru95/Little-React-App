@@ -6,7 +6,7 @@ class Counter extends React.Component {
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
     state = {
-        count: 0,
+        count: this.props.value,
         tags: ["tag1", "tag2", "tag3"],
     };
     handleIncrement = (product) => {
