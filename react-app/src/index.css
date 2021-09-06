@@ -1,58 +1,63 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 .badge:hover {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
 }
-
+.badge-primary {
+    background-color: #186db6;
+}
+.badge-primary:hover {
+    background-color: #0e67b4;
+}
 .badge-error {
-  background-color: #b94a48;
+    background-color: #b94a48;
 }
 
 .badge-error:hover {
-  background-color: #953b39;
+    background-color: #953b39;
 }
 
 .badge-warning {
-  background-color: #f89406;
+    background-color: #f89406;
 }
 
 .badge-warning:hover {
-  background-color: #c67605;
+    background-color: #c67605;
 }
 
 .badge-success {
-  background-color: #468847;
+    background-color: #468847;
 }
 
 .badge-success:hover {
-  background-color: #356635;
+    background-color: #356635;
 }
 
 .badge-info {
-  background-color: #3a87ad;
+    background-color: #3a87ad;
 }
 
 .badge-info:hover {
-  background-color: #2d6987;
+    background-color: #2d6987;
 }
 
 .badge-inverse {
-  background-color: #333333;
+    background-color: #333333;
 }
 
 .badge-inverse:hover {
-  background-color: #1a1a1a;
+    background-color: #1a1a1a;
 }
