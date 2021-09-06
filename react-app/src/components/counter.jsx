@@ -1,27 +1,39 @@
 import React, { Component } from "react";
 
 class Counter extends React.Component {
+    // constructor() {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
     state = {
-        count: 1,
-        tags: [],
+        count: 0,
+        tags: ["tag1", "tag2", "tag3"],
     };
-    renderList() {
-        if (this.state.tags.length === 0) return <p>No tags to show here</p>;
-        return (
-            <ul>
-                {this.state.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                ))}
-            </ul>
-        );
-    }
+    handleIncrement = () => {
+        this.state.count += 1;
+    };
     render() {
         return (
             <React.Fragment>
-                {this.state.tags.length === 0 && <h2>No tags to show here</h2>}
-                {this.renderList()}
+                <span style={{ fontSize: 14 }} className={this.formatClasses()}>
+                    {this.formatCount()}
+                </span>
+                <button
+                    onClick={this.handleIncrement}
+                    className="btn btn-secondary btn-sm"
+                >
+                    Increment
+                </button>
             </React.Fragment>
         );
+    }
+    formatCount() {
+        return this.state.count === 0 ? "Zero" : this.state.count;
+    }
+    formatClasses() {
+        let normalClassText = "badge m-1 badge-";
+        return (normalClassText +=
+            this.state.count === 0 ? "warning" : "success");
     }
 }
 
