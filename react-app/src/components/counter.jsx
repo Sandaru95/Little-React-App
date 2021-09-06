@@ -5,14 +5,6 @@ class Counter extends React.Component {
     //     super();
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
-    state = {
-        value: this.props.counter.value,
-        tags: ["tag1", "tag2", "tag3"],
-    };
-    handleIncrement = (product) => {
-        console.log(product);
-        this.setState({ value: this.state.value + 1 });
-    };
     render() {
         console.log(this.props.counter.children);
         return (
@@ -22,7 +14,7 @@ class Counter extends React.Component {
                     {this.formatValue()}
                 </span>
                 <button
-                    onClick={() => this.handleIncrement({ id: 1 })}
+                    onClick={() => this.props.onIncrement(this.props.counter)}
                     className="btn btn-secondary btn-sm"
                 >
                     Increment
@@ -38,12 +30,14 @@ class Counter extends React.Component {
         );
     }
     formatValue() {
-        return this.state.value === 0 ? "Zero" : this.state.value;
+        return this.props.counter.value === 0
+            ? "Zero"
+            : this.props.counter.value;
     }
     formatClasses() {
         let normalClassText = "badge m-1 badge-";
         return (normalClassText +=
-            this.state.value === 0 ? "warning" : "success");
+            this.props.counter.value === 0 ? "warning" : "success");
     }
 }
 
