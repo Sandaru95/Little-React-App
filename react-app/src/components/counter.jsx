@@ -17,6 +17,7 @@ class Counter extends React.Component {
         console.log(this.props.children);
         return (
             <React.Fragment>
+                <h4>Counter #{this.props.id}</h4>
                 <span style={{ fontSize: 14 }} className={this.formatClasses()}>
                     {this.formatValue()}
                 </span>
@@ -25,6 +26,12 @@ class Counter extends React.Component {
                     className="btn btn-secondary btn-sm"
                 >
                     Increment
+                </button>
+                <button
+                    className="btn btn-danger btn-sm m-2"
+                    onClick={this.props.onDelete}
+                >
+                    Delete
                 </button>
                 <br />
             </React.Fragment>
