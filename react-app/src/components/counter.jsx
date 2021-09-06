@@ -10,7 +10,7 @@ class Counter extends React.Component {
         tags: ["tag1", "tag2", "tag3"],
     };
     handleIncrement = () => {
-        this.state.count += 1;
+        this.setState({ count: this.state.count + 1 });
     };
     render() {
         return (
