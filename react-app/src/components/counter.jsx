@@ -25,6 +25,7 @@ class Counter extends React.Component {
                 >
                     Increment
                 </button>
+                <br />
             </React.Fragment>
         );
     }
