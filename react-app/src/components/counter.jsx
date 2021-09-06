@@ -6,18 +6,19 @@ class Counter extends React.Component {
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
     state = {
-        count: this.props.value,
+        value: this.props.value,
         tags: ["tag1", "tag2", "tag3"],
     };
     handleIncrement = (product) => {
         console.log(product);
-        this.setState({ count: this.state.count + 1 });
+        this.setState({ value: this.state.value + 1 });
     };
     render() {
+        console.log(this.props.children);
         return (
             <React.Fragment>
                 <span style={{ fontSize: 14 }} className={this.formatClasses()}>
-                    {this.formatCount()}
+                    {this.formatValue()}
                 </span>
                 <button
                     onClick={() => this.handleIncrement({ id: 1 })}
@@ -29,13 +30,13 @@ class Counter extends React.Component {
             </React.Fragment>
         );
     }
-    formatCount() {
-        return this.state.count === 0 ? "Zero" : this.state.count;
+    formatValue() {
+        return this.state.value === 0 ? "Zero" : this.state.value;
     }
     formatClasses() {
         let normalClassText = "badge m-1 badge-";
         return (normalClassText +=
-            this.state.count === 0 ? "warning" : "success");
+            this.state.value === 0 ? "warning" : "success");
     }
 }
 
